@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Bike | Misty Ride</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  <!--  Navbar -->
+   <link href="https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap" rel="stylesheet">
+
+  <header class="navbar">
+    <img src="ecoride-logo-white.png" alt="EcoRide Logo"
+           class="w-auto" style="height: 68px;">
+<h1 class="text-6xl text-yellow-400 drop-shadow-md"
+    style="font-family: 'Lobster', sans-serif;">
+  Misty Ride
+</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="booking.html" class="active">Booking</a>
+    </nav>
+  </header><BR>
+
+  <!--  Booking Section -->
+  <section class="booking-section">
+    <h2>Book Your Ride</h2>
+    <p>Reserve your bike online and enjoy exploring Nuwara Eliya at your own pace!</p>
+
+    <form class="booking-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+      <label for="bikeType">Select Bike Type</label>
+      <select id="bikeType" required>
+        <option value="">-- Choose a Bike --</option>
+        <option value="mountain">Mountain Bike</option>
+        <option value="road">Road Bike</option>
+        <option value="electric">Electric Bike</option>
+        <option value="tandem">Tandem Bike</option>
+      </select>
+
+      <div class="date-group">
+        <div>
+          <label for="startDate">Start Date</label>
+          <input type="date" id="startDate" required>
+        </div>
+        <div>
+          <label for="endDate">End Date</label>
+          <input type="date" id="endDate" required>
+        </div>
+      </div>
+
+      <label for="message">Additional Notes</label>
+      <textarea id="message" rows="4" placeholder="Special requests or instructions..."></textarea>
+
+      <button type="submit" class="btn-primary">Confirm Booking</button>
+    </form>
+  </section>
+
+  <!--  Footer -->
+  <footer class="footer">
+    <p>© 2025 Nuwara Eliya Bike Rentals. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

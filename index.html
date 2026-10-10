@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel = "stylesheet" href="style.css">
+   <link rel="icon" type="image/png" href="ecoride-logo-white.png">
+
+   
+  <title>MistyRide</title>
+  <script src = "index.js"></script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+
+
+  <!--  Header with Dropdown Menu -->
+<!-- Include this in <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap" rel="stylesheet">
+
+<header style="background-color: #05452fe0;" 
+        class="text-white shadow-md fixed top-0 w-full z-50">
+
+
+    <!--  Logo + Site Name -->
+    <div class="flex items-center space-x-3">
+      <img src="ecoride-logo-white.png" alt="EcoRide Logo"
+           class="w-auto" style="height: 68px;">
+<h1 class="text-6xl text-yellow-400 drop-shadow-md"
+    style="font-family: 'Lobster', sans-serif;">
+  Misty Ride
+</h1>
+    </div>
+
+    <!--  Navigation -->
+    <nav class="space-x-4 text-lg">
+      <a href="index.html" class="hover:text-yellow-300 transition">Home</a>
+      <a href="blog.html" class="hover:text-yellow-300 transition">Blog</a>
+      <a href="booking.html" class="hover:text-yellow-300 transition">Booking</a>
+      <a href="contact.html" class="hover:text-yellow-300 transition">Contact</a>
+      <a href="about.html" class="hover:text-yellow-300 transition">About</a>
+    </nav>
+
+  </div>
+</header>
+
+
+
+
+  <!--  Hero Section -->
+  <section class="relative h-[90vh] flex items-center justify-center bg-cover bg-center" 
+    style="background-image: url('background\ 1.jpg');">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative z-10 text-center text-white px-6">
+      <h2 class="text-4xl md:text-6xl font-bold mb-4 animate-fadeIn">Discover Nuwara Eliya on Two Wheels</h2>
+      <p class="text-lg md:text-2xl mb-6 animate-fadeIn delay-200">
+        Rent a bike and explore the beauty of Sri Lanka’s hill country 🌿
+      </p>
+      <a href="#bikes" 
+         class="bg-yellow-400 text-black font-semibold py-3 px-6 rounded-full hover:bg-yellow-500 transition">
+         Rent a Bike Now
+      </a>
+    </div>
+  </section>
+  <!-- Availability filter -->
+<section class="container mx-auto p-6" id="availability-filter"
+  style="background-image: url('green\ background.avif');">
+  <div class="max-w-3xl mx-auto bg-white rounded-lg shadow p-6">
+    <h3 class="text-xl font-semibold mb-3">Check Availability</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-3 items-end">
+      <div>
+        <label class="block text-sm font-medium mb-1">Vehicle</label>
+        <select id="vehicleType" class="w-full p-2 border rounded">
+          <option value="all">All types</option>
+          <option value="cycle">🚲 Cycles</option>
+          <option value="motorbike">🏍️ Motorbikes</option>
+          <option value="scooter">🛵 Scooters</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">From</label>
+        <input id="fromDate" type="date" class="w-full p-2 border rounded" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1">To</label>
+        <input id="toDate" type="date" class="w-full p-2 border rounded" />
+      </div>
+
+      <div>
+        <button id="checkAvailability" class="w-full bg-yellow-400 text-black font-semibold py-2 px-3 rounded hover:bg-yellow-500">
+          Check availability
+        </button>
+      </div>
+    </div>
+
+    <p id="availabilityMessage" class="mt-4 text-sm"></p>
+  </div>
+</section>
+
+<!-- Availability Results (initially hidden if no results) -->
+<section id="availability-results" class="container mx-auto p-6" style="display:none;">
+  <div class="max-w-5xl mx-auto">
+    <h3 id="resultsHeading" class="text-2xl font-bold mb-4"></h3>
+    <p id="resultsSub" class="text-sm text-gray-600 mb-4"></p>
+
+    <div id="resultsList" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- JS will populate cloned .bike-card nodes here -->
+    </div>
+
+    <p id="noResults" class="text-sm text-red-600 mt-4" style="display:none;">No vehicles found for your selection.</p>
+  </div>
+</section>
+
+
+  <!-- 🚲 Bike Section -->
+<section id="bikes" class="bikes-section">
+  <h2>Our Fleet</h2>
+
+  <!-- Filter Buttons (optional for design) -->
+  <div class="category-buttons">
+    <button class="active">🚲 Cycles</button>
+    <button>🏍️ Motorbikes</button>
+    <button>🛵 Scooters</button>
+  </div>
+
+  <!-- 🚲 Cycles Category -->
+  <h3 class="category-title">🚲 Cycles</h3>
+  <div class="bike-list">
+
+    <div class="bike-card">
+      <img src="cycle.webp" alt="Mountain Explorer">
+      <h3>Mountain Explorer</h3>
+      <p>Perfect for off-road adventures in the hills and tea trails.</p>
+      
+      <a href="booking.html" class="btn-primary">Book Now</a>
+    </div>
+
+    <div class="bike-card">
+      <img src="cycle 4.jpg" alt="City Cruiser">
+      <h3>Ladies Cycle</h3>
+      <p>Comfortable, lightweight, stylish bicycle designed for easy, smooth city rides.</p>
+      
+      <a href="booking.html" class="btn-primary">Book Now</a>
+    </div>
+
+    <div class="bike-card">
+      <img src="cycle 6.png" alt="Hybrid Comfort">
+      <h3>Hybrid Comfort</h3>
+      <p>A mix of speed and comfort — great for city and countryside rides.</p>
+      
+      <a href="booking.html" class="btn-primary">Book Now</a>
+    </div>
+  </div>
+
+  <!-- 🏍️ Motorbikes Category -->
+  <h3 class="category-title">🏍️ Motorbikes</h3>
+  <div class="bike-list">
+
+    <div class="bike-card">
+      <img src="Motorbick 01.jpg" alt="Road Racer">
+      <h3>Honda CB Hornet 160 R</h3>
+      <p>Stylish 160cc bike with smooth performance and excellent handling.</p>
+      <a href="booking.html" class="btn-primary">Book Now</a>
+    </div>
+
+    <div class="bike-card">
+      <img src="Motorbike 02.jpg" alt="Adventure Pro">
+      <h3>Hero X pulse 200 CC</h3>
+      <p>Powerful 200cc adventure bike perfect for thrilling Nuwara Eliya rides.</p>
+      <a href="booking.html" class="btn-primary">Book Now</a>
+    </div>
+
+    <div class="bike-card">
+      <img src="Motorbikes 03.avif" alt="Vintage Classic">
+      <h3>Yamaha FZS FI V4</h3>
+      <p>Sleek 150cc bike with fuel injection, ideal for city rides.</p>
+      <a href="booking.html" class="btn-primary">Book Now</a>
+    </div>
+  </div>
+
+  <!-- 🛵 Scooters Category -->
+  <h3 class="category-title">🛵 Scooters</h3>
+  <div class="bike-list">
+
+    <div class="bike-card">
+      <img src="scooter 01.jpg" alt="Electric Rider">
+      <h3>Honda Dio</h3>
+      <p>Lightweight 110cc scooter, easy to ride, ideal for city and tourist trips.</p>
+      <a href="booking.html" class="btn-primary">Book Now</a>
+    </div>
+
+    <div class="bike-card">
+      <img src="scooters 02.jpeg" alt="Family Tandem">
+      <h3>Classic scooter 125 cc</h3>
+      <p>Comfortable and reliable 125cc scooter, perfect for city rides and short trips.</p>
+      <a href="booking.html" class="btn-primary">Book Now</a>
+    </div>
+
+    <div class="bike-card">
+      <img src="scooters 03.cms" alt="Kids Mini Bike">
+      <h3>TVS Ntorq 125</h3>
+      <p>Stylish 125cc scooter, sporty performance, perfect for city rides and short trips.</p>
+      <a href="booking.html" class="btn-primary">Book Now</a>
+    </div>
+  </div>
+</section>
+
+
+  </div>
+<!--  Map Section -->
+<section class="map-section">
+  <div class="map-container">
+    <h2>Find Us in Nuwara Eliya</h2>
+    <p>Come visit our rental station near Gregory Lake and explore the hills on two wheels.</p>
+
+    <div class="map-wrapper">
+      <div id="map"></div>
+    </div>
+
+    <div class="location-info">
+      <p><strong>📍 Address:</strong> No. 45, Gregory Lake Road, Nuwara Eliya, Sri Lanka</p>
+      <p><strong>📞 Phone:</strong> +94 71 234 5678</p>
+      <p><strong>🕐 Open Hours:</strong> 7:00 AM – 7:00 PM</p>
+    </div>
+  </div>
+</section>
+
+
+  <!--  Contact Section -->
+  <section class="py-16 text-center bg-gray-900 text-white">
+    <h2 class="text-3xl font-bold mb-4">Contact Us</h2>
+    <p class="text-lg mb-6">Need help? Reach us at <span class="text-yellow-400">MistyRide.lk</span></p>
+    <a href="#" class="bg-yellow-400 text-black px-6 py-3 rounded-full font-semibold hover:bg-yellow-500 transition">
+      Book Now
+    </a>
+  </section>
+
+  <!--  Footer -->
+  <footer class="bg-green-700 text-white text-center py-4">
+    © 2025 Nuwara Eliya Bike Rentals | All Rights Reserved
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+  </script>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1.2s ease forwards;
+    }
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+  </style>
+    <!-- your other scripts if any -->
+  <script src="js/map.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu13zOgg_uYMJaHzL8SBI2XbrnKBu47as&callback=initMap">
+  </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const vehicleSelect = document.getElementById('vehicleType');
+  const fromInput = document.getElementById('fromDate');
+  const toInput = document.getElementById('toDate');
+  const checkBtn = document.getElementById('checkAvailability');
+  const messageEl = document.getElementById('availabilityMessage');
+
+  const resultsSection = document.getElementById('availability-results');
+  const resultsHeading = document.getElementById('resultsHeading');
+  const resultsSub = document.getElementById('resultsSub');
+  const resultsList = document.getElementById('resultsList');
+  const noResults = document.getElementById('noResults');
+
+  // Helper: normalize type strings to match select values
+  function normalizeTypeLabel(text){
+    if(!text) return 'all';
+    const t = text.toLowerCase();
+    if(t.includes('cycle')) return 'cycle';
+    if(t.includes('bike') && t.includes('motor')) return 'motorbike';
+    if(t.includes('motorbike') || t.includes('motor') || t.includes('motorbikes')) return 'motorbike';
+    if(t.includes('scooter')) return 'scooter';
+    if(t.includes('motor')) return 'motorbike';
+    return 'all';
+  }
+
+  // For each card, try to figure out the type:
+  const sourceCards = Array.from(document.querySelectorAll('.bike-card')).map(card => {
+    // 1) If data-type exists, use it
+    let type = (card.getAttribute('data-type') || '').trim().toLowerCase();
+    if(type) return { el: card, type };
+
+    // 2) Otherwise find nearest ancestor with class 'bike-list' and look for a preceding heading
+    const bikeList = card.closest('.bike-list');
+    if(bikeList){
+      // look for previous sibling that is a heading (h1-h6) or has class 'category-title'
+      let prev = bikeList.previousElementSibling;
+      while(prev && prev.nodeType === 1 && prev.tagName.toLowerCase() !== 'h3' && !prev.classList.contains('category-title') && !/h[1-6]/i.test(prev.tagName)){
+        prev = prev.previousElementSibling;
+      }
+      const headingText = prev ? prev.textContent.trim() : '';
+      type = normalizeTypeLabel(headingText);
+      if(type !== 'all') return { el: card, type };
+    }
+
+    // 3) Fallback: try to inspect nearest heading above card (search up to two levels)
+    let ancestor = card.parentElement;
+    for(let i=0;i<3 && ancestor;i++){
+      const possibleHeading = Array.from(ancestor.querySelectorAll('h3, h2, .category-title')).find(n => n && n.textContent);
+      if(possibleHeading){
+        type = normalizeTypeLabel(possibleHeading.textContent);
+        if(type !== 'all') return { el: card, type };
+      }
+      ancestor = ancestor.parentElement;
+    }
+
+    // 4) Last fallback: unknown — mark as 'all' but log a warning
+    console.warn('Could not infer type for a .bike-card element. Consider adding data-type attribute.', card);
+    return { el: card, type: 'all' };
+  });
+
+  // Utility to format date
+  function formatDateInput(val){
+    if(!val) return '';
+    const d = new Date(val + 'T00:00:00');
+    return d.toLocaleDateString();
+  }
+
+  function showMessage(text, isError=false){
+    messageEl.textContent = text;
+    messageEl.style.color = isError ? 'crimson' : 'inherit';
+  }
+
+  function humanTypeLabel(type){
+    if(type === 'cycle') return 'Cycles';
+    if(type === 'motorbike') return 'Motorbikes';
+    if(type === 'scooter') return 'Scooters';
+    return 'All Vehicles';
+  }
+
+  function clearResults(){
+    resultsList.innerHTML = '';
+    noResults.style.display = 'none';
+  }
+
+  function populateResults(filteredItems){
+    clearResults();
+    if(filteredItems.length === 0){
+      noResults.style.display = '';
+      resultsSection.style.display = 'block';
+      resultsHeading.textContent = 'No vehicles found';
+      resultsSub.textContent = '';
+      resultsSection.scrollIntoView({behavior:'smooth'});
+      return;
+    }
+
+    filteredItems.forEach(item => {
+      // clone the element node
+      const clone = item.el.cloneNode(true);
+      // ensure clone is visible
+      clone.style.display = '';
+      resultsList.appendChild(clone);
+    });
+
+    resultsSection.style.display = 'block';
+    resultsSection.scrollIntoView({behavior:'smooth'});
+  }
+
+  checkBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const type = vehicleSelect.value;
+    const from = fromInput.value;
+    const to = toInput.value;
+
+    // Validate dates
+    if((from && !to) || (!from && to)){
+      showMessage('Please select both From and To dates (or leave both empty).', true);
+      return;
+    }
+    if(from && to){
+      const fromDate = new Date(from + 'T00:00:00');
+      const toDate = new Date(to + 'T23:59:59');
+      if(fromDate > toDate){
+        showMessage('From date must be same or before To date.', true);
+        return;
+      }
+    }
+
+    // Filter items by type (if type === 'all' include all)
+    const filtered = sourceCards.filter(item => {
+      return type === 'all' ? true : item.type === type;
+    });
+
+    // Build heading & subtext
+    const typeLabel = humanTypeLabel(type);
+    const dateText = (from && to) ? ` from ${formatDateInput(from)} to ${formatDateInput(to)}` : '';
+    resultsHeading.textContent = `${typeLabel}${type === 'all' ? '' : ' available'}`;
+    resultsSub.textContent = filtered.length > 0 ? `Showing ${filtered.length} vehicle${filtered.length !== 1 ? 's' : ''}${dateText}.` : '';
+
+    showMessage(`Found ${filtered.length} vehicle${filtered.length !== 1 ? 's' : ''}${dateText}.`);
+
+    populateResults(filtered);
+  });
+
+  // clear message when user changes selection
+  vehicleSelect.addEventListener('change', () => messageEl.textContent = '');
+});
+</script>
+
+<script>
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  if (window.scrollY > 50) {
+    header.classList.add('py-1');
+    header.classList.remove('py-3');
+  } else {
+    header.classList.add('py-3');
+    header.classList.remove('py-1');
+  }
+});
+</script>
+
+
+</body>
+
+</html>

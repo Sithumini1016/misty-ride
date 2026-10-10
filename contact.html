@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us |   MistyRide</title>
+  <link rel = "stylesheet" href="contact.css">
+  <link rel = "stylesheet" href="style.css">
+
+  <script src = "map.js"></script>
+</head>
+<body>
+
+  <!--  Navbar -->
+  <header class="navbar">
+    <img src="ecoride-logo-white.png" alt="EcoRide Logo"
+           class="w-auto" style="height: 68px;">
+<h1 class="text-6xl text-yellow-400 drop-shadow-md"
+    style="font-family: 'Lobster', sans-serif;">
+  Misty Ride
+</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header> <BR>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Reach out for bookings, questions, or feedback.</p>
+
+    <div class="contact-container">
+      <!-- Contact Form -->
+      <form class="contact-form">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label for="message">Your Message</label>
+        <textarea id="message" rows="5" placeholder="Write your message..." required></textarea>
+
+        <button type="submit" class="btn-primary">Send Message</button>
+      </form>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>📍 Our Location</h3>
+        <p>No. 45, Gregory Lake Road,<br> Nuwara Eliya, Sri Lanka</p>
+
+        <h3>📞 Call Us</h3>
+        <p>+94 71 234 5678</p>
+
+        <h3>📧 Email</h3>
+        <p>info@nuereliya-bikerentals.lk</p>
+
+        <h3>🕐 Hours</h3>
+        <p>Open daily: 7:00 AM – 7:00 PM</p>
+      </div>
+    </div>
+  </section>
+  <script src="js/map.js"></script>
+ <script async defer
+
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAu13zOgg_uYMJaHzL8SBI2XbrnKBu47as&cal
+lback=initMap">
+ </script>
+ <!-- Map Section -->
+<section class="map-section">
+  <div class="map-container">
+    <h2>Find Us in Nuwara Eliya</h2>
+    <p>Come visit our rental station near Gregory Lake and explore the hills on two wheels.</p>
+
+    <div class="map-wrapper">
+      <div id="map"></div>
+    </div>
+
+    <div class="location-info">
+      <p><strong>📍 Address:</strong> No. 45, Gregory Lake Road, Nuwara Eliya, Sri Lanka</p>
+      <p><strong>📞 Phone:</strong> +94 71 234 5678</p>
+      <p><strong>🕐 Open Hours:</strong> 7:00 AM – 7:00 PM</p>
+    </div>
+  </div>
+</section>
+
+  <!--  Footer -->
+  <footer class="footer">
+    <p>© 2025 Nuwara Eliya Bike Rentals. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

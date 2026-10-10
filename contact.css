@@ -1,0 +1,6 @@
+#map {
+ width: 100%;
+ height: 400px; /* adjust as needed */
+ min-height: 300px;
+ border-radius: 8px;
+}
